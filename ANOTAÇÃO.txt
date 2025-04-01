@@ -1,0 +1,14 @@
+nba scan
+
+quero acompanhar a NBA e consultar coisas 
+
+nba_api provavelmente
+
+criar um banco de dados local *SQLite*
+
+usar C para PRÉ-processar os dados antes de inserir no DB
+e para calculos e processamentos de baixo nivel
+(preparar dados pro python pegar "limpo")
+
+PYTHON(puxar nba_api) -> C(pré processar os dados) -> SQLite(armazenar o resultado) - > PYTHON(sistema em si)
+
