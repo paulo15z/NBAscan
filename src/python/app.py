@@ -55,7 +55,7 @@ def processar_dados(pontos):
     return {"media": media, "maximo": maximo}
 
 # REGISTRO DOS ROUTES
-app.include_router(jogos.router)
+#app.include_router(jogos.router)
 app.include_router(jogadores.router)
 app.include_router(times.router)
 
