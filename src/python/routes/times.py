@@ -1,0 +1,1 @@
+# endpoint para informaçoes dos times
