@@ -1,7 +1,7 @@
 import sqlite3
 
 def criar_banco():
-    conn = sqlite3.connect("NBAscan/data/nba_scan.db")
+    conn = sqlite3.connect("data/nba_scan.db")
     cursor = conn.cursor()
 
     cursor.execute("""
@@ -9,6 +9,15 @@ def criar_banco():
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         game_id TEXT UNIQUE,
         data TEXT
+    )""")
+
+    # Nova tabela estatisticas
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS estatisticas (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        jogador_id INTEGER,
+        pontos INTEGER,
+        FOREIGN KEY (jogador_id) REFERENCES jogadores(id)
     )""")
 
     cursor.execute("""
