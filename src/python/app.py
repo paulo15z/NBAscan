@@ -1,9 +1,7 @@
 # arquivo principal
-from fastapi import FastAPI
 from nba_api.stats.static import teams
 import sqlite3
 import json
-import subprocess
 import ctypes
 
 DB_PATH = "data/nba_scan.db" 
@@ -22,8 +20,6 @@ lib.calcular_media.argtypes = [ctypes.POINTER(ctypes.c_int), ctypes.c_int]
 lib.encontrar_maximo.restype = ctypes.c_int
 lib.encontrar_maximo.argtypes = [ctypes.POINTER(ctypes.c_int), ctypes.c_int]
 
-# definir APP
-app = FastAPI()
 
 def salvar_dados_brutos(dados):
     #SALVA OS DADOS >BRUTOS< NO BANCO DE DADOS
@@ -53,10 +49,3 @@ def processar_dados(pontos):
 
     return {"media": media, "maximo": maximo}
 
-# REGISTRO DOS ROUTES
-
-
-if __name__ == "__main__":
-    #teste
-   import uvicorn
-   uvicorn.run(app, host='127.0.0.1', port=8000)
