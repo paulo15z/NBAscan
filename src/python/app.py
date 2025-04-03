@@ -5,7 +5,6 @@ import sqlite3
 import json
 import subprocess
 import ctypes
-from src.python.routes import jogadores, times
 
 DB_PATH = "data/nba_scan.db" 
 
@@ -55,9 +54,7 @@ def processar_dados(pontos):
     return {"media": media, "maximo": maximo}
 
 # REGISTRO DOS ROUTES
-#app.include_router(jogos.router)
-app.include_router(jogadores.router)
-app.include_router(times.router)
+
 
 if __name__ == "__main__":
     #teste
