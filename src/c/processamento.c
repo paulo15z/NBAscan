@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "processamento.h"
 
 // calcular a media (pontos de jogos) // 
 float calcular_media(int* pontos, int tamanho) {
@@ -30,3 +29,4 @@ int encontrar_maximo(int* pontos, int tamanho) {
     }
     return maximo;
 }
+
